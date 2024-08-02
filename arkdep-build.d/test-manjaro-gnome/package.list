@@ -7,10 +7,12 @@ bluez
 bluez-cups
 bluez-plugins
 bluez-utils
+boxbuddy
 btrfs-progs
 cups
 cups-pdf
 debugedit
+distrobox
 dosfstools
 efibootmgr
 f2fs-tools
@@ -49,8 +51,8 @@ gvfs-wsdd
 ibus-typing-booster
 libnss-extrausers
 libva-mesa-driver
-manjaro-zsh-config
 man-db
+manjaro-zsh-config
 mesa
 mesa-vdpau
 mutter
@@ -62,6 +64,7 @@ networkmanager-openvpn
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+opennic-up
 openssh
 pacman-contrib
 pipewire
@@ -101,6 +104,3 @@ zsh
 zsh-autosuggestions
 zsh-completions
 zsh-syntax-highlighting
-distrobox
-podman
-boxbuddy
