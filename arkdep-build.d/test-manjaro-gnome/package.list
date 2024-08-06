@@ -26,7 +26,6 @@ git
 glibc-locales
 gnome-backgrounds
 gnome-calendar
-gnome-console
 gnome-control-center
 gnome-disk-utility
 gnome-initial-setup
@@ -75,6 +74,7 @@ pipewire-pulse
 plymouth
 podman
 power-profiles-daemon
+ptyxis
 pv
 qemu-guest-agent
 sof-firmware
