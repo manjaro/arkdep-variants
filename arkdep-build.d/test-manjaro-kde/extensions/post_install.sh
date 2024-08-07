@@ -17,9 +17,6 @@ arch-chroot ${workdir} flatpak remote-add --if-not-exists flathub https://flathu
 arch-chroot ${workdir} systemctl enable opennic-up-on-boot
 arch-chroot ${workdir} systemctl enable opennic-up.timer
 
-# Enable SSH for now
-arch-chroot ${workdir} systemctl enable sshd
-
 # Save pacman local database
 mkdir -pv ${workdir}/usr/share/manjaro
 #arch-chroot ${workdir} tar -czf /opt/manjaro/pacman-local-db.tar.gz /var/lib/pacman/local
