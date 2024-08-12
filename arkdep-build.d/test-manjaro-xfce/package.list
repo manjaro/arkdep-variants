@@ -19,7 +19,6 @@ distrobox
 dosfstools
 efibootmgr
 engrampa
-evince
 exo
 f2fs-tools
 fakeroot
@@ -29,7 +28,6 @@ fuse
 fwupd
 garcon
 gcc
-gdm
 git
 glibc-locales
 gnome-themes-standard
@@ -81,7 +79,6 @@ pipewire-jack
 pipewire-pulse
 plymouth-theme-manjaro
 podman
-poppler-glib       # tumbler - for PDF thumbnails
 power-profiles-daemon
 ptyxis
 pv
