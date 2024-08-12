@@ -2,6 +2,7 @@ apparmor
 arkane-application-cleaner
 arkdep
 arkdep-libalpm-hooks
+bibata-cursor-theme
 bind
 bluez
 bluez-cups
@@ -51,6 +52,7 @@ ibus-typing-booster
 libnss-extrausers
 libva-mesa-driver
 man-db
+manjaro-gnome-backgrounds
 manjaro-zsh-config
 mesa
 mesa-vdpau
@@ -66,6 +68,7 @@ noto-fonts-emoji
 opennic-up
 openssh
 pacman-contrib
+papirus-maia-icon-theme
 pipewire
 pipewire-alsa
 pipewire-audio
@@ -85,6 +88,7 @@ terminus-font
 tpm2-tools
 tpm2-tss
 tpm2-tss-engine
+ttf-hack
 vulkan-icd-loader
 vulkan-intel
 vulkan-mesa-layers
