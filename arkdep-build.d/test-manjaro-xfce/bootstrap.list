@@ -1,0 +1,10 @@
+amd-ucode
+base
+dbus-daemon-units
+dracut
+intel-ucode
+linux-firmware
+linux610
+linux610-headers
+linux610-acpi_call
+manjaro-keyring
