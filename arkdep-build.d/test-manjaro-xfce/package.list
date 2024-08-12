@@ -30,6 +30,7 @@ garcon
 gcc
 git
 glibc-locales
+gnome-software
 gnome-themes-standard
 gst-plugin-pipewire
 gst-plugins-base
