@@ -20,6 +20,7 @@ dosfstools
 ffmpeg
 ffmpegthumbs
 flatpak
+glibc-locales
 gnome-themes-standard
 gst-libav
 gst-plugins-bad
