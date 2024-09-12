@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+BRANCH_PATH="/var/lib/manjaro-branch"
+
+if [[ $# -eq 1 ]]; then
+  case "$1" in
+    "-c")
+      branch=Stable
+      case "$branch" in
+        "Stable" | "Testing")
+          echo "$branch"
+          exit 0
+          ;;
+        *)
+          # This can happen on CI builds or when downgrading from a newer build that knows of more branches.  The update
+          # path should decide how to handle it.
+          echo >&2 "Warning: Unrecognized currently selected branch name '$branch', updates may not succeed."
+          echo "$branch"
+          exit 0
+          ;;
+      esac
+      ;;
+    "-l")
+      echo Stable
+      echo Testing
+      exit 0
+      ;;
+    "Stable" | "Testing")
+      echo "$1" > "$BRANCH_PATH"
+      exit 0
+      ;;
+  esac
+fi
+
+echo "Usage: manjaro-select-branch <-Stable|Testing>" 1>&2
