@@ -40,9 +40,9 @@ inxi
 kaccounts-providers
 kamera
 kate
+kde-gtk-config
 kdeconnect
 kdegraphics-thumbnailers
-kde-gtk-config
 kdenetwork-filesharing
 kdeplasma-addons
 kgamma
@@ -80,6 +80,7 @@ libnss-extrausers
 libva-intel-driver
 libva-mesa-driver
 libva-vdpau-driver
+maliit-keyboard
 manjaro-alsa
 manjaro-gstreamer
 manjaro-handheld
@@ -87,7 +88,6 @@ manjaro-icons
 manjaro-kde-settings
 manjaro-pipewire
 manjaro-zsh-config
-maliit-keyboard
 mesa-utils
 milou
 mtpfs
@@ -107,8 +107,8 @@ ntfs-3g
 ntp
 numlockx
 ocean-sound-theme
-opengamepadui-stale
 opengamepadui-session-git
+opengamepadui-stale
 opennic-up
 openresolv
 openssh
@@ -127,8 +127,8 @@ plymouth
 plymouth-kcm
 plymouth-theme-manjaro
 poppler-data
-powerdevil
 power-profiles-daemon
+powerdevil
 powerstation-git
 powertop
 protonup-qt
@@ -151,14 +151,15 @@ qt6-imageformats
 qt6-multimedia-ffmpeg
 qt6-virtualkeyboard
 rsync
-ryzenadj
 ryzen_smu-dkms
+ryzenadj
 samba
 sddm
 sddm-breath-theme
 sddm-kcm
 spectacle
 sshfs
+steam
 steam-removable-media-git
 sudo
 systemsettings
