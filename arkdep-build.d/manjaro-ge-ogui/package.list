@@ -24,6 +24,7 @@ ffmpegthumbs
 flatpak
 fwupd
 gamemode
+gamescope-plus
 gamescope-session-git
 glibc-locales
 gnome-themes-standard
@@ -107,7 +108,8 @@ ntfs-3g
 ntp
 numlockx
 ocean-sound-theme
-opengamepadui-git
+#opengamepadui-git
+opengamepadui-stale
 opengamepadui-session-git
 opennic-up
 openresolv
