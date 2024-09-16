@@ -1,0 +1,26 @@
+name: arkdep_build
+on:
+  workflow_dispatch:
+  #push:
+  #  branches:
+  #    - '**'
+  #schedule:
+  #   - cron:  '30 6 1 * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        ##### EDIT ME #####      
+        EDITION: [test-manjaro-gnome, test-manjaro-kde, test-manjaro-xfce]
+        ###################          
+    steps:
+      - id: arkdep-build
+        uses: manjaro/arkdep-action@main
+        with:
+          edition: ${{ matrix.edition }}
+          arkdep-profiles-repo: "https://github.com/manjaro/arkdep-variants.git"
+          s3-cfg: ${{ secrets.S3_CFG }}
+          s3-cdn77-bearer: ${{ secrets.S3_CDN77_BEARER }}
+          s3-cdn77-id: ${{ secrets.S3_CDN77_ID }}
