@@ -45,7 +45,6 @@ lib32-vulkan-intel
 lib32-vulkan-mesa-layers
 lib32-vulkan-radeon
 libcanberra
-libdvdcss
 libnss-extrausers
 libva-intel-driver
 libva-mesa-driver
@@ -54,7 +53,6 @@ manjaro-alsa
 manjaro-gstreamer
 manjaro-handheld
 manjaro-icons
-manjaro-kde-settings
 manjaro-pipewire
 manjaro-zsh-config
 mesa-utils
@@ -74,22 +72,18 @@ nss-mdns
 ntfs-3g
 ntp
 numlockx
-ocean-sound-theme
 #opengamepadui-git
 opengamepadui-stale
 opengamepadui-session-git
 opennic-up
 openresolv
 openssh
-os-session-select-opengamepadui
 p7zip
 perl-file-mimeinfo
 pipewire-jack
 plymouth
-plymouth-kcm
 plymouth-theme-manjaro
 poppler-data
-powerdevil
 power-profiles-daemon
 powerstation-git
 powertop
@@ -106,12 +100,6 @@ python-setuptools
 python-systemd
 python-wheel
 python-yaml
-qt5-imageformats
-qt5-tools
-qt5-virtualkeyboard
-qt6-imageformats
-qt6-multimedia-ffmpeg
-qt6-virtualkeyboard
 rsync
 ryzenadj
 ryzen_smu-dkms
@@ -119,7 +107,6 @@ samba
 sshfs
 steam-removable-media-git
 sudo
-systemsettings
 terminus-font
 ttf-dejavu
 ttf-hack-nerd
@@ -131,7 +118,6 @@ vulkan-icd-loader
 vulkan-intel
 vulkan-mesa-layers
 vulkan-radeon
-xdg-desktop-portal-kde
 xdg-user-dirs
 xdg-utils
 xf86-input-elographics
