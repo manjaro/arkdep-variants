@@ -107,8 +107,6 @@ cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/.zshrc ${ARK
 chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.zshrc
 mkdir -p ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.config
 chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.config
-cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/.config/kwinrc ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.config/kwinrc
-chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.config/kwinrc
 
 printf "\e[1;34m-->\e[0m\e[1m Creating SWAP file\e[0m\n"
 btrfs filesystem mkswapfile --size 6G ${ARKDEP_ROOT}/arkdep/shared/swapfile

@@ -9,10 +9,7 @@ device-quirks-git
 dmidecode
 evtest
 fcitx5-chinese-addons
-fcitx5-configtool
 fcitx5-pinyin-zhwiki
-ffmpeg
-ffmpegthumbs
 flatpak
 fwupd
 gamemode
