@@ -11,8 +11,8 @@ echo 'KERNEL=="i2c-FTCS1000:00", SUBSYSTEM=="i2c", ATTR{power/wakeup}="disabled"
 # Enable InputPlumber
 arch-chroot ${workdir} systemctl enable inputplumber
 
-# Enable lightdm
-arch-chroot ${workdir} systemctl enable lightdm
+# Enable gtdm
+arch-chroot ${workdir} systemctl enable sddm
 
 # Enable Powerstation (only when OGUI-Overlay is used)
 arch-chroot ${workdir} systemctl enable powerstation
