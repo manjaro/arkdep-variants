@@ -8,8 +8,8 @@ dbus-python
 device-quirks-git
 dmidecode
 evtest
-fcitx5-chinese-addons
-fcitx5-pinyin-zhwiki
+#fcitx5-chinese-addons
+#fcitx5-pinyin-zhwiki
 flatpak
 fwupd
 gamemode
