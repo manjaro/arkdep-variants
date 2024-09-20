@@ -26,7 +26,7 @@ function check_sentinel()
     cd "$HOME"
     cd "$config_dir"
     sentinel_value="$(cat "$SENTINEL_FILE")"
-    if $sentinel_value != "$SENTINEL_VALUE"; then
+    if [ "$sentinel_value" == "$SENTINEL_VALUE" ]; then
       echo "/usr/bin/gnome-session"
     else
       return 1
