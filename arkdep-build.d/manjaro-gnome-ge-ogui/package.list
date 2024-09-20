@@ -64,6 +64,7 @@ gnome-tweaks
 nautilus
 
 # GNOME extra
+bibata-cursor-theme
 bluez
 bluez-cups
 bluez-plugins
@@ -86,6 +87,7 @@ gvfs-smb
 lib32-libcanberra
 libcanberra
 manjaro-alsa
+manjaro-gnome-backgrounds
 manjaro-gstreamer
 manjaro-handheld
 manjaro-icons
@@ -110,6 +112,7 @@ power-profiles-daemon
 sshfs
 terminus-font
 ttf-dejavu
+ttf-hack
 ttf-hack-nerd
 xdg-desktop-portal-gnome
 xdg-user-dirs

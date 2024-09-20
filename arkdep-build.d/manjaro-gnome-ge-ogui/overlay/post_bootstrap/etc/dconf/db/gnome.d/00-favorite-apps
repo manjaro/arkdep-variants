@@ -1,0 +1,2 @@
+[org/gnome/shell]
+favorite-apps = ['org.mozilla.firefox.desktop', org.gnome.Settings.desktop, 'org.manjaro.Logout.desktop',  'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']
