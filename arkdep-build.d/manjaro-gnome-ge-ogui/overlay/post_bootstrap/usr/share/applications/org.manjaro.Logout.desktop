@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Gaming Mode
+Comment=Switch to Gaming Mode
+Icon=input-gaming
+Exec=gnome-session-quit --force
