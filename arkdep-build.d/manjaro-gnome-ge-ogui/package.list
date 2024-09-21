@@ -4,6 +4,7 @@ device-quirks-git
 dmidecode
 glibc-locales
 htop
+ladspa-sdk
 lib32-libogg
 lib32-libva
 lib32-libva-intel-driver
