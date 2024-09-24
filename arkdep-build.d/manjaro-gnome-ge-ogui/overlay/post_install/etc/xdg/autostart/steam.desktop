@@ -35,5 +35,3 @@ Categories=Network;FileTransfer;Game;
 Actions=Store;Community;Library;Servers;Screenshots;News;Settings;BigPicture;Friends;
 PrefersNonDefaultGPU=true
 X-KDE-RunOnDiscreteGpu=true
-OnlyShowIn=KDE
-
