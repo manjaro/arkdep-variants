@@ -1,5 +1,5 @@
 # update config file
-sed -i -e "s|repo_default_image=.*|repo_default_image='manjaro-ge-ogui'|" $arkdep_dir/config
+sed -i -e "s|repo_default_image=.*|repo_default_image='manjaro-gnome-ge-ogui'|" $arkdep_dir/config
 sed -i -e 's|deploy_keep=.*|deploy_keep=2|' $arkdep_dir/config
 sed -i -e "s|migrate_files=.*|migrate_files=('var/usrlocal' 'var/opt' 'var/srv' 'var/lib/AccountsService' 'var/lib/bluetooth' 'var/lib/NetworkManager' 'var/lib/arkane' 'var/lib/manjaro-branch' 'var/lib/power-profiles-daemon' 'var/db' 'etc/localtime' 'etc/locale.gen' 'etc/locale.conf' 'etc/NetworkManager/system-connections' 'etc/ssh')|" $arkdep_dir/config
 

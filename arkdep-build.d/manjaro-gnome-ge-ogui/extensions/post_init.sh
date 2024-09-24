@@ -4,7 +4,7 @@
 sed -i -e 's|backup_user_accounts=.*|backup_user_accounts=1|' ${ARKDEP_ROOT}/arkdep/config
 
 # Set default image
-sed -i -e "s|repo_default_image=.*|repo_default_image='manjaro-ge-ogui'|" ${ARKDEP_ROOT}/arkdep/config
+sed -i -e "s|repo_default_image=.*|repo_default_image='manjaro-gnome-ge-ogui'|" ${ARKDEP_ROOT}/arkdep/config
 
 # Set deploy_keep to 2
 sed -i -e 's|deploy_keep=.*|deploy_keep=2|' ${ARKDEP_ROOT}/arkdep/config
