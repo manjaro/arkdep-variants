@@ -1,0 +1,16 @@
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///usr/share/backgrounds/manjaro/abstract-l.png'
+picture-uri-dark='file:///usr/share/backgrounds/manjaro/abstract-d.png'
+primary-color='#3465a4'
+secondary-color='#000000'
+
+[org/gnome/desktop/interface]
+accent-color='maia'
+color-scheme='prefer-dark'
+cursor-theme='Bibata-Modern-Classic'
+document-font-name='Sans 11'
+font-name='Noto Sans 11'
+icon-theme='Papirus-Dark'
+monospace-font-name='Hack 11'

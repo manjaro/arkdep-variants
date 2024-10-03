@@ -1,0 +1,6 @@
+LABEL=manjaro_root		/home			btrfs	rw,relatime,subvol=arkdep/shared/home,compress=zstd		0 1
+LABEL=manjaro_root		/root			btrfs	rw,relatime,subvol=arkdep/shared/root,compress=zstd		0 1
+LABEL=manjaro_root		/arkdep        		btrfs	rw,relatime,subvol=arkdep,compress=zstd				0 1
+LABEL=manjaro_root		/var/lib/flatpak	btrfs	rw,relatime,subvol=arkdep/shared/flatpak,compress=zstd		0 1
+LABEL=manjaro_esp		/boot			vfat	rw,umask=0077							0 2
+/arkdep/shared/swapfile		none      		swap	defaults							0 0
