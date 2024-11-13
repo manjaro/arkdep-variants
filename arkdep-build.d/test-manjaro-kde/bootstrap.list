@@ -1,10 +1,1 @@
-amd-ucode
-base
-dbus-daemon-units
-dracut
-intel-ucode
-linux-firmware
-linux69
-linux69-headers
-linux69-acpi_call
-manjaro-keyring
+# obsolete
