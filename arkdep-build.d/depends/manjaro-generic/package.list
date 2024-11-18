@@ -27,7 +27,6 @@ lib32-vulkan-radeon
 libnss-extrausers
 libva-intel-driver
 libva-mesa-driver
-libva-vdpau-driver
 networkmanager
 networkmanager-l2tp
 networkmanager-openconnect
