@@ -50,7 +50,6 @@ gst-plugins-good
 gst-plugins-ugly
 gvfs-nfs
 gvfs-smb
-lib32-libcanberra
 libcanberra
 manjaro-alsa
 manjaro-gnome-backgrounds
@@ -85,8 +84,6 @@ gamescope-plus
 gamescope-session-steam-plus-git
 hhfc
 inputplumber-git
-lib32-gamemode
-lib32-mangohud
 mangohud
 opengamepadui-session-git
 opengamepadui-git
