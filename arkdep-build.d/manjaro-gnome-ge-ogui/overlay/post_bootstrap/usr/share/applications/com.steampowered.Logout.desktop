@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Steam-Plus Gaming Mode
-Comment=Switch to Steam-Plus Gaming Mode
-Icon=deck-return
-Exec=manjaro-session-select steam-plus
