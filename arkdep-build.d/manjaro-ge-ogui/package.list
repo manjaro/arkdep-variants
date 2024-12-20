@@ -78,8 +78,7 @@ ntfs-3g
 ntp
 numlockx
 ocean-sound-theme
-#opengamepadui-git
-opengamepadui-stale
+opengamepadui-git
 opengamepadui-session-git
 os-session-select-opengamepadui
 p7zip
@@ -124,6 +123,7 @@ sddm-breath-theme
 sddm-kcm
 spectacle
 sshfs
+steam-installer
 steam-removable-media-git
 systemsettings
 ttf-dejavu

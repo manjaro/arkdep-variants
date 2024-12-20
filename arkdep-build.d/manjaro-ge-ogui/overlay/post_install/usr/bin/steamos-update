@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Load Arkdep config file
+source /arkdep/config
+
+# Set common variables and tweakables
+declare branch=''
+declare -r variant_basename='manjaro-ge-ogui'
+declare -r variant_prefix=''
+declare -r ARKDEP_NO_CONFIRM=1
+declare -r logfile='/var/log/steamos-update.log'
+declare -r arkdep_dir='/arkdep'
+
+# Get update branch if configured
+#
+# If the branch file exists load it, remove whitespaces
+[[ -f /var/lib/manjaro-branch ]] && branch=$(cat /var/lib/manjaro-branch | xargs)
+
+# If branch file was empty or not configured properly default to stable
+if [[ ! $branch =~ ^(Unstable|Testing)$ ]]; then
+	branch='stable'
+fi
+
+branch=${branch,,}
+
+# Temp till we add updates.
+printf 'steamos-update: No update available\n' >> $logfile
+printf 'No update available\n'
+exit 7
