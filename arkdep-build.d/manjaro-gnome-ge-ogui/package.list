@@ -89,8 +89,8 @@ lib32-gamemode
 lib32-mangohud
 mangohud
 opengamepadui-session-git
-#opengamepadui-git
-opengamepadui-stale
+opengamepadui-git
+#opengamepadui-stale
 powerstation-git
 protonup-qt
 protonutils
