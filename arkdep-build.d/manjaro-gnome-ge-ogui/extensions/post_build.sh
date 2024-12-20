@@ -100,9 +100,12 @@ chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir
 printf "\e[1;34m-->\e[0m\e[1m Adding SKEL files in ${ARKDEP_ROOT}/arkdep/shared/home/$homedir\e[0m\n"
 mkdir -p ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop
 chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop
-cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/Desktop/manjaro-gamemode.desktop ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/manjaro-gamemode.desktop
-chmod +x ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/manjaro-gamemode.desktop
-chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/manjaro-gamemode.desktop
+cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/Desktop/org.shadowblip.Logout.desktop ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/org.shadowblip.Logout.desktop
+chmod +x ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/org.shadowblip.Logout.desktop
+chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/org.shadowblip.Logout.desktop
+cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/Desktop/com.steampowered.Logout.desktop ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/com.steampowered.Logout.desktop
+chmod +x ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/com.steampowered.Logout.desktop
+chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/Desktop/com.steampowered.Logout.desktop
 cp -v ${ARKDEP_ROOT}/arkdep/deployments/$image_name/rootfs/etc/skel/.zshrc ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.zshrc
 chown $owner ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.zshrc
 mkdir -p ${ARKDEP_ROOT}/arkdep/shared/home/$homedir/.config

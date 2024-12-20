@@ -1,6 +1,6 @@
 #!/bin/sh
 # force -steamdeck option in desktop mode to prevent constant steam updates
-sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' ${workdir}/usr/share/applications/steam.desktop
+sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam -steamdeck,' ${workdir}/usr/share/applications/steam.desktop
 
 # Enable flathub
 arch-chroot ${workdir} flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
@@ -11,7 +11,7 @@ echo 'KERNEL=="i2c-FTCS1000:00", SUBSYSTEM=="i2c", ATTR{power/wakeup}="disabled"
 # Enable InputPlumber
 arch-chroot ${workdir} systemctl enable inputplumber
 
-# Enable gtdm
+# Enable sddm
 arch-chroot ${workdir} systemctl enable sddm
 
 # Enable Powerstation (only when OGUI-Overlay is used)

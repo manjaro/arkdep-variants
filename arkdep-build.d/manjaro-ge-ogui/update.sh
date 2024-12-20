@@ -20,7 +20,7 @@ fi
 [[ -e $arkdep_dir/deployments/${data[0]}/rootfs/var/nm-system-connections ]] && rm -rf $arkdep_dir/deployments/${data[0]}/rootfs/var/nm-system-connections
 
 # force -steamdeck option in desktop mode to prevent constant steam updates
-[[ -e /home/gamer/Desktop/steam.desktop ]] && sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam-runtime -steamdeck,' /home/gamer/Desktop/steam.desktop
+[[ -e /home/gamer/Desktop/steam.desktop ]] && sed -i 's,Exec=/usr/bin/steam-runtime,Exec=/usr/bin/steam -steamdeck,' /home/gamer/Desktop/steam.desktop
 
 # Arkdep is pre EFI var drop version
 if [[ -f $arkdep_boot/loader/entries/${data[0]}.conf ]]; then
