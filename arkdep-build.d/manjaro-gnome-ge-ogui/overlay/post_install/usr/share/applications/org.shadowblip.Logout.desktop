@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Gaming Mode
-Comment=Switch to Gaming Mode
-Icon=input-gaming
-Exec=manjaro-session-select opengamepadui
