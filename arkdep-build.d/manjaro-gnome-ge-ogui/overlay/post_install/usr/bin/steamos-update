@@ -23,7 +23,160 @@ fi
 
 branch=${branch,,}
 
-# Temp till we add updates.
-printf 'steamos-update: No update available\n' >> $logfile
-printf 'No update available\n'
-exit 7
+# Check if an update is available
+check_for_update () {
+
+	# Fetch data from repos
+	declare curl_data=$(curl -sf "$repo_url/$variant_prefix$variant_basename/database-$branch" || printf 'ERROR')
+	declare remote_data=$curl_data
+
+	# Fetch deployments
+	declare -r deployed=($(ls $arkdep_dir/deployments/))
+
+	# If curl failed the download
+	[[ $curl_data == 'ERROR' ]] && error_and_quit "Failed downloading database at $repo_url/$variant_prefix$variant_basename/database-$branch"
+
+	curl_data=$(printf "$curl_data" | head -1)
+	readarray -d : -t data <<< "$curl_data"
+
+	# Remove whitespaces
+	data[0]=${data[0]//[$'\t\r\n']}
+	data[1]=${data[1]//[$'\t\r\n']}
+	data[2]=${data[2]//[$'\t\r\n']}
+	data[3]=${data[3]//[$'\t\r\n']}
+
+	# If data.0 is empty something has gone wrong or the database is empty
+	if [[ -z ${data[0]+x} ]]; then
+		error_and_quit 'data.0 is empty on check_for_update'
+	fi
+
+	if [[ -z ${data[3]+x} ]] || [[ ! -n ${data[3]} ]]; then
+		error_and_quit 'data.3 is empty on check_for_update'
+	fi
+
+	for remote in ${remote_data[@]}; do
+		remote=${remote%%:*}
+		filtered_remote_data+=(${remote})
+	done
+
+	# If the found version is already deployed we do not have to update
+	[[ -e $arkdep_dir/deployments/${data[0]} ]] && no_update=1
+
+	declare active_deployment=""
+	declare not_in_db=""
+
+	# Check if running deployment is found remotely
+	for deployment in ${deployed[@]}; do
+		[[ ! ${filtered_remote_data[@]} =~ $deployment ]] && not_in_db+=(${deployment})
+		$(grep -q "$arkdep_dir/deployments/$deployment/rootfs" /proc/cmdline >/dev/null 2>&1) && active_deployment=$deployment
+	done
+
+        echo "Active Deployment: $active_deployment" >> $logfile
+        echo "Deployments not found in DB: ${not_in_db[@]}" >> $logfile
+
+	# If the active deployment is not found in database we do not have to update
+	[[ ${not_in_db[@]} =~ $active_deployment ]] && no_update=1
+
+	# Report to Steam if update is available
+	if [[ $no_update -eq 1 ]]; then
+		printf 'steamos-update: No update available\n' >> $logfile
+		printf 'No update available\n'
+		exit 7
+	else
+		printf "steamos-update: Update available: ${data[3]}-r${data[0]:0:7}\n" >> $logfile
+		printf "Update available: ${data[3]}-r${data[0]:0:7}\n"
+	fi
+}
+
+# Shared error and quit function
+error_and_quit () {
+	printf "steamos-update: $1\n" >> $logfile
+	exit 1
+}
+
+# Clean ouptput for Steam progressbar
+clean_progress() {
+	local scale=$1
+	local postfix=$2
+	local last_value=$scale
+	while IFS= read -r line; do
+		value=$(( ${line}*${scale}/100 ))
+		if [ "$last_value" != "$value" ]; then
+			echo ${value}${postfix}
+			last_value=$value
+		fi
+	done
+}
+
+# Trigger script behavior based provided params
+if [[ $1 == 'check' ]]; then
+	check_for_update
+elif [[ $1 == '--supports-duplicate-detection'  ]]; then
+	printf 'steamos-update: No update available, duplicate detection\n' >> $logfile
+	printf 'No update available\n'
+	exit 7
+else
+	# Target is manually downloaded and then deployed from cache to allow for pretty completion percentage reporting
+	echo '1%'
+
+	# Get data needed to perform update
+	check_for_update
+	echo '5%'
+
+	# Write .run file to indicate process is ongoing and not yet finished, can be used to resume download later
+	touch $arkdep_dir/cache/${data[0]}.tar.${data[1]}.run
+
+	# Download the tarball if not yet downloaded
+	systemd-inhibit --who='steamos-update' --what='idle:sleep:shutdown' --why='steamos-update is downloading an image' \
+	curl --http1.1 -# -L -o "$arkdep_dir/cache/${data[0]}.tar.${data[1]}" -C - "$repo_url/$variant_prefix$variant_basename/${data[0]}.tar.${data[1]}" 2>&1 | \
+	stdbuf -oL tr '\r' '\n' | grep --line-buffered -oP '[0-9]*+(?=.[0-9])' | clean_progress 70 % || error_and_quit 'Failed to download image'
+
+	# Remove the .run file
+	[[ -e $arkdep_dir/cache/${data[0]}.tar.${data[1]} ]] && rm $arkdep_dir/cache/${data[0]}.tar.${data[1]}.run
+
+	# Validate image using hash, Arkdep will skip this when deploying from cache
+	# TODO: Implement GPG checking instead
+	# Identify used checksum method
+	if [[ ${#data[2]} -eq 40 ]]; then
+		# If it is a sha-1
+		sha1sum $arkdep_dir/cache/${data[0]}.tar.${data[1]} |
+			grep "${data[2]}" ||
+			error_and_quit 'SHA-1 checksum does not match the one defined in database\n'
+	elif [[ ${#data[2]} -eq 56 ]]; then
+		# If it is sha-224
+		sha224sum $arkdep_dir/cache/${data[0]}.tar.${data[1]} |
+			grep "${data[2]}" ||
+			error_and_quit 'SHA-224 checksum does not match the one defined in database\n'
+	elif [[ ${#data[2]} -eq 64 ]]; then
+		# If it is sha-256
+		sha256sum $arkdep_dir/cache/${data[0]}.tar.${data[1]} |
+			grep "${data[2]}" ||
+			error_and_quit 'SHA-256 checksum does not match the one defined in database\n'
+	elif [[ ${#data[2]} -eq 96 ]]; then
+		# If it is sha-384
+		sha384sum $arkdep_dir/cache/${data[0]}.tar.${data[1]} |
+			grep "${data[2]}" ||
+			error_and_quit 'SHA-384 checksum does not match the one defined in database\n'
+	elif [[ ${#data[2]} -eq 128 ]]; then
+		# If it is a sha-512
+		sha512sum $arkdep_dir/cache/${data[0]}.tar.${data[1]} |
+			grep "${data[2]}" ||
+			error_and_quit 'SHA-512 Checksum does not match the one defined in database\n'
+	else
+		error_and_quit 'Failed to identify SHA checksum type\n'
+	fi
+	echo '75%'
+
+	# Call Arkdep on defined branch variant and deploy from cache
+	printf 'Y' | arkdep deploy cache ${data[0]} >> $logfile
+	# Catch Arkdep exit code
+	declare -r arkdep_exit_code=$?
+	echo '90%'
+
+	# Always cleanup
+	printf 'Y' | arkdep cleanup >> $logfile
+	echo '100%'
+
+	exit $arkdep_exit_code
+
+fi
