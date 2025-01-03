@@ -20,6 +20,7 @@ echo 'KERNEL=="i2c-FTCS1000:00", SUBSYSTEM=="i2c", ATTR{power/wakeup}="disabled"
 
 # Enable InputPlumber
 arch-chroot ${workdir} systemctl enable inputplumber
+arch-chroot ${workdir} systemctl enable inputplumber-suspend
 
 # Enable sddm
 arch-chroot ${workdir} systemctl enable sddm
