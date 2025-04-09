@@ -1,0 +1,2 @@
+[org/gnome/shell]
+favorite-apps = ['org.gnome.Epiphany.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.TextEditor.desktop', 'org.gnome.Ptyxis.desktop', 'org.gnome.Software.desktop']

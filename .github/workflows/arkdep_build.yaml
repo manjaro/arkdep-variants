@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        ##### EDIT ME #####      
-        EDITION: [test-manjaro-gnome, test-manjaro-kde, test-manjaro-xfce]
-        ###################          
+        ##### EDIT ME #####
+        EDITION: [manjaro-summit-gnome, manjaro-summit-kde, manjaro-summit-xfce]
+        ###################
     steps:
       - id: arkdep-build
         uses: manjaro/arkdep-action@main

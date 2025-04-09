@@ -1,11 +1,8 @@
 #!/bin/sh
 
-# Enable flathub
-arch-chroot ${workdir} flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # Enable OpenNIC DNS servers
-arch-chroot ${workdir} systemctl enable opennic-up-on-boot
-arch-chroot ${workdir} systemctl enable opennic-up.timer
+#arch-chroot ${workdir} systemctl enable opennic-up-on-boot
+#arch-chroot ${workdir} systemctl enable opennic-up.timer
 
 # Save pacman local database
 mkdir -pv ${workdir}/usr/share/manjaro
