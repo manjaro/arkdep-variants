@@ -15,12 +15,14 @@ gst-plugins-good
 libnss-extrausers
 libva-intel-driver
 libva-mesa-driver
+nano
 networkmanager
 networkmanager-l2tp
 networkmanager-openconnect
 networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
+noevim
 opennic-up
 openssh
 plymouth-theme-manjaro
