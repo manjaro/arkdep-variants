@@ -21,6 +21,7 @@ jobs:
         with:
           edition: ${{ matrix.edition }}
           arkdep-profiles-repo: "https://github.com/manjaro/arkdep-variants.git"
+          arkdep-profiles-branch: "dennis1248/devel"
           s3-cfg: ${{ secrets.S3_CFG }}
           s3-cdn77-bearer: ${{ secrets.S3_CDN77_BEARER }}
           s3-cdn77-id: ${{ secrets.S3_CDN77_ID }}
