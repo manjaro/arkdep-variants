@@ -36,12 +36,12 @@ gvfs-nfs
 gvfs-smb
 gvfs-wsdd
 ibus-typing-booster
+kgx
 man-db
 manjaro-gnome-backgrounds
 manjaro-zsh-config
 mutter
 nautilus
-nautilus-open-in-ptyxis
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
@@ -53,7 +53,6 @@ pipewire-audio
 pipewire-jack
 pipewire-pulse
 plymouth
-ptyxis
 ttf-hack
 webp-pixbuf-loader
 wget
