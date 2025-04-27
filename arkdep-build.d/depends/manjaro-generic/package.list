@@ -8,6 +8,7 @@ cups
 cups-pdf
 debugedit
 dosfstools
+espeak-ng
 flatpak
 glibc-locales
 gst-plugins-base
@@ -16,15 +17,15 @@ libnss-extrausers
 libva-intel-driver
 libva-mesa-driver
 nano
+neovim
 networkmanager
 networkmanager-l2tp
 networkmanager-openconnect
 networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
-neovim
-opennic-up
 openssh
+orca
 plymouth-theme-manjaro
 podman
 power-profiles-daemon
