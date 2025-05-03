@@ -9,7 +9,7 @@ distrobox
 efibootmgr
 f2fs-tools
 fakeroot
-fuse
+fuse3
 fwupd
 gdm
 git
@@ -28,7 +28,6 @@ gnome-tweaks
 gst-plugin-pipewire
 gvfs
 gvfs-afc
-gvfs-dnssd
 gvfs-dnssd
 gvfs-goa
 gvfs-gphoto2

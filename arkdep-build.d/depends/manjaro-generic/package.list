@@ -15,7 +15,6 @@ gst-plugins-base
 gst-plugins-good
 libnss-extrausers
 libva-intel-driver
-libva-mesa-driver
 nano
 neovim
 networkmanager
