@@ -9,6 +9,7 @@ cups-pdf
 debugedit
 dosfstools
 espeak-ng
+exfatprogs
 flatpak
 glibc-locales
 gst-plugins-base
@@ -34,6 +35,7 @@ sof-firmware
 spice-vdagent
 sudo
 switcheroo-control
+system-config-printer
 systemd-resolvconf
 terminus-font
 tpm2-tools
@@ -50,3 +52,4 @@ xf86-input-elographics
 xf86-input-evdev
 xf86-input-libinput
 xf86-input-void
+xfsprogs
