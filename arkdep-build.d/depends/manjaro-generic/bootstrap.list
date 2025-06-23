@@ -4,7 +4,7 @@ dbus-daemon-units
 dracut
 intel-ucode
 linux-firmware
-linux614
-linux614-headers
-linux614-acpi_call
+linux615
+linux615-headers
+linux615-acpi_call
 manjaro-keyring
