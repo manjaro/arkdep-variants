@@ -41,7 +41,7 @@ manjaro-alsa
 manjaro-gstreamer
 manjaro-kde-settings
 manjaro-pipewire
-manjaro-zsh-config 
+manjaro-zsh-config
 milou
 mtpfs
 noto-fonts
@@ -53,7 +53,6 @@ numlockx
 ocean-sound-theme
 p7zip
 perl-file-mimeinfo
-phonon-qt5-gstreamer
 plasma-browser-integration
 plasma-desktop
 plasma-nm
